@@ -1,6 +1,7 @@
 FROM openjdk:11-jdk-slim
 
 WORKDIR /app
+# 처음에 접근하게 될 dir 설정
 
 COPY build/aws-v3-0.0.3.jar ./application.jar
 
@@ -14,4 +15,4 @@ CMD ["--server.port=3000"]
 ## docker build -t java-server ./  -> java-server image가 만들어 진다
 
 # java-server image 실행
-## docker run -dit -p 8080:80 java-server -> 8080 port에 java-server를 실행시킨다.
+## docker run -dit -p 8080:80 java-server -> 8080 port에 java-server를 실행시킨다. 
