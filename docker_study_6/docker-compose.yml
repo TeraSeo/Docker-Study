@@ -1,0 +1,14 @@
+services:
+  db:               # docker compose ps 이름
+    image: mysql
+    restart: always # 종료될시 자동 재실행
+    volumes: 
+      - mysql-compose-volume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=rootdb
+    ports:
+      - "3307:3306"
+    
+volumes:
+  mysql-compose-volume:
